@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Van Niekerk Tools — Downloads</title>
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --panel2:#1c2330; --line:#2a3340;
+    --ink:#e6edf3; --muted:#9aa7b4; --faint:#6b7683;
+    --teal:#2dd4bf; --teal-dim:#14b8a6; --navy:#3b82f6; --amber:#f59e0b;
+    --radius:16px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:radial-gradient(1200px 600px at 50% -10%, #16202e 0%, var(--bg) 55%) fixed;
+    color:var(--ink);
+    font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif;
+    line-height:1.6; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+  header{text-align:center;padding:72px 24px 40px}
+  .brandmark{
+    display:inline-flex;align-items:center;gap:12px;
+    font-weight:700;letter-spacing:.5px;color:var(--muted);
+    text-transform:uppercase;font-size:13px;margin-bottom:22px;
+  }
+  .brandmark .dot{width:10px;height:10px;border-radius:50%;
+    background:var(--teal);box-shadow:0 0 14px var(--teal)}
+  header h1{font-size:clamp(30px,5vw,46px);font-weight:800;letter-spacing:-.5px;line-height:1.15}
+  header p{color:var(--muted);font-size:18px;max-width:560px;margin:16px auto 0}
+
+  .grid{display:grid;grid-template-columns:1fr;gap:26px;padding:12px 0 40px}
+  @media(min-width:840px){.grid{grid-template-columns:1fr 1fr}}
+
+  .card{
+    background:linear-gradient(180deg,var(--panel) 0%,#12171f 100%);
+    border:1px solid var(--line);border-radius:var(--radius);
+    padding:28px;display:flex;flex-direction:column;
+    box-shadow:0 12px 40px rgba(0,0,0,.35);
+  }
+  .card .top{display:flex;align-items:center;gap:14px;margin-bottom:6px}
+  .icon{
+    width:52px;height:52px;border-radius:13px;flex:0 0 auto;
+    display:grid;place-items:center;
+  }
+  .icon svg{width:28px;height:28px}
+  .icon.net{background:rgba(45,212,191,.12);border:1px solid rgba(45,212,191,.35)}
+  .icon.hmi{background:rgba(59,130,246,.12);border:1px solid rgba(59,130,246,.35)}
+  .card h2{font-size:24px;font-weight:800;letter-spacing:-.3px}
+  .ver{font-size:12px;color:var(--faint);font-weight:600}
+  .tag{font-size:13px;color:var(--teal);font-weight:600;margin:2px 0 14px}
+  .card.hmi .tag{color:var(--navy)}
+  .desc{color:var(--muted);font-size:15px;margin-bottom:18px}
+
+  .feat{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:22px}
+  .feat li{position:relative;padding-left:24px;font-size:14.5px;color:var(--ink)}
+  .feat li::before{
+    content:"";position:absolute;left:0;top:8px;width:9px;height:9px;
+    border-radius:2px;background:var(--teal);transform:rotate(45deg)
+  }
+  .card.hmi .feat li::before{background:var(--navy)}
+  .feat li b{color:#fff;font-weight:600}
+
+  .req{font-size:12.5px;color:var(--faint);margin:0 0 18px;padding:10px 12px;
+    background:var(--panel2);border:1px solid var(--line);border-radius:10px}
+
+  .actions{margin-top:auto;display:flex;flex-wrap:wrap;gap:10px}
+  .btn{
+    appearance:none;border:0;cursor:pointer;text-decoration:none;
+    display:inline-flex;align-items:center;gap:8px;
+    padding:12px 20px;border-radius:11px;font-size:15px;font-weight:700;
+    transition:transform .12s ease,filter .12s ease;
+  }
+  .btn:hover{transform:translateY(-1px);filter:brightness(1.08)}
+  .btn.primary{background:var(--teal-dim);color:#04120f}
+  .card.hmi .btn.primary{background:var(--navy);color:#fff}
+  .btn.ghost{background:transparent;color:var(--muted);border:1px solid var(--line)}
+  .btn svg{width:16px;height:16px}
+
+  footer{text-align:center;padding:36px 24px 64px;color:var(--faint);font-size:13.5px;border-top:1px solid var(--line);margin-top:20px}
+  footer a{color:var(--muted)}
+  .note{max-width:640px;margin:0 auto 10px;color:var(--faint);font-size:12.5px}
+  code{background:var(--panel2);padding:2px 6px;border-radius:5px;font-size:12px;color:var(--teal)}
+  .sha{margin-top:14px;font-size:11px;color:var(--faint);line-height:1.5}
+  .sha b{display:block;color:var(--muted);font-weight:600;letter-spacing:.4px;margin-bottom:3px}
+  .sha .hash{font-family:'SFMono-Regular',Consolas,monospace;color:var(--muted);
+    word-break:break-all;background:var(--panel2);border:1px solid var(--line);
+    border-radius:8px;padding:8px 10px;display:block}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brandmark"><span class="dot"></span> Van Niekerk Tools</div>
+      <h1>Download our Windows tools</h1>
+      <p>Purpose-built utilities for network discovery and industrial HMI work. Download the latest build below.</p>
+    </header>
+
+    <div class="grid">
+
+      <!-- NETSWEEP -->
+      <section class="card net">
+        <div class="top">
+          <div class="icon net">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#2dd4bf" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="2.5"/><path d="M12 2a10 10 0 0 1 10 10M12 2a10 10 0 0 0-10 10M12 22a10 10 0 0 0 10-10M12 22A10 10 0 0 1 2 12"/>
+            </svg>
+          </div>
+          <div>
+            <h2>NetSweep <span class="ver">v1.0.0</span></h2>
+          </div>
+        </div>
+        <div class="tag">LAN / IP Network Scanner</div>
+        <p class="desc">Sweep your local network — or a remote machine network over VPN — and list every connected device in seconds. Single self-contained <code>.exe</code>.</p>
+        <ul class="feat">
+          <li><b>Parallel scanning</b> — a full subnet swept in seconds.</li>
+          <li><b>Adapter auto-detect</b> — IP and subnet filled from your active card.</li>
+          <li><b>Offline vendor lookup</b> — embedded IEEE database, industrial makers included.</li>
+          <li><b>Works over VPN</b> — names Siemens &amp; Rockwell gear via EtherNet/IP + S7.</li>
+          <li><b>CSV + PDF export</b> and per-device Wake-on-LAN.</li>
+        </ul>
+        <div class="req">Windows 10/11 · self-contained, no install · run as administrator for full MAC/vendor detection.</div>
+        <div class="actions">
+          <a class="btn primary" href="https://github.com/KingLuan6969/NetSweep/releases/download/v1.0.0/NetSweep.exe" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
+            Download for Windows
+          </a>
+          <a class="btn ghost" href="https://github.com/KingLuan6969/NetSweep/releases/latest">Release notes</a>
+        </div>
+        <div class="sha">
+          <b>SHA-256 · NetSweep.exe</b>
+          <span class="hash">cae7e57a4ec2d050488612f8d06bfc738453c5984f402fe0a303dd90a1c24117</span>
+        </div>
+      </section>
+
+      <!-- HMI TRANSLATOR -->
+      <section class="card hmi">
+        <div class="top">
+          <div class="icon hmi">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 5h7M7 4v1c0 3.5-2 6-3 7M5 9c1 2 3 3.5 5 4"/><path d="M13 20l4-9 4 9M14.5 17h5"/>
+            </svg>
+          </div>
+          <div>
+            <h2>HMI Translator <span class="ver">v1.0.0</span></h2>
+          </div>
+        </div>
+        <div class="tag">Bulk TIA / WinCC text translation</div>
+        <p class="desc">Translate an Excel export of TIA Portal / WinCC project texts with DeepL — placeholders protected, over-length flagged, every save validated before re-import.</p>
+        <ul class="feat">
+          <li><b>Placeholder-safe</b> — <code>%d</code>, <code>{0}</code>, tags &amp; breaks restored exactly.</li>
+          <li><b>Length budget</b> — over-length text flagged, never truncated.</li>
+          <li><b>Memory &amp; library</b> — approved edits reused, never re-charged.</li>
+          <li><b>Glossary sync</b> for consistent terminology across projects.</li>
+          <li><b>Validated save</b> — write → re-open → cell-for-cell check.</li>
+        </ul>
+        <div class="req">Windows 10/11 · requires a DeepL API key (free tier available) · per-PC activation · optional Claude key for shorten-to-fit.</div>
+        <div class="actions">
+          <a class="btn primary" href="https://github.com/KingLuan6969/HmiTranslator/releases/download/v1.0.0/HmiTranslator.exe" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
+            Download for Windows
+          </a>
+          <a class="btn ghost" href="https://github.com/KingLuan6969/HmiTranslator/releases/latest">Release notes</a>
+        </div>
+        <div class="sha">
+          <b>SHA-256 · HmiTranslator.exe</b>
+          <span class="hash">03b01ab0a80818dfa61d91c2177ea2312a48f0980370030702507d297ba0403a</span>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <footer>
+    <p class="note">Both tools are self-contained Windows executables. On first download, Windows SmartScreen may prompt — choose <b>More info → Run anyway</b> if you trust the source.</p>
+    <p class="note">To verify a download, run <code>certutil -hashfile NetSweep.exe SHA256</code> in Command Prompt and compare the result to the hash shown above the button.</p>
+    <p>© <span id="yr">2026</span> Luan van Niekerk · <a href="mailto:vanniekerk.luan@outlook.com">vanniekerk.luan@outlook.com</a></p>
+  </footer>
+</body>
+</html>
